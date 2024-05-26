@@ -1,0 +1,53 @@
+.log-ut-btn {
+  background-color: rgb(135, 141, 141);
+  margin-top: 200px;
+}
+
+.blog-post-style {
+  background-color: rgb(63, 99, 99);
+  
+  padding: 40px;
+  margin: 20px 120px;
+}
+.link {
+    color: rgb(0, 0, 0);
+    padding: 40px;
+}
+.nav-style {
+    display: flex;
+    
+    
+    align-items: center;
+}
+.header {
+    color: rgb(0, 0, 0);
+  width: 100vw;
+  background-color: rgb(84, 146, 146);
+  display: flex;
+  justify-content: space-between;
+}
+.blog-text {
+  color: black;
+}
+.blog-runrik {
+  color: black;
+  font-size: x-large;
+  font-weight: 800;
+}
+p{
+    color: black;
+}
+.coment{
+    display: flex;
+    box-shadow: 4px;
+    border-style: solid;
+    border-radius: 10px;
+    
+}
+.coment-user{
+    padding: 10px;
+}
+.text-conent{
+    padding: 10px;
+
+}
