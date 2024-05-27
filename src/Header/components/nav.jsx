@@ -1,12 +1,15 @@
+import { useNavigate } from "react-router-dom";
 import Links from "./Links";
-const Nav = (props) => {
+import { useState } from "react";
+const Nav = () => {
+
 
   return (
     <div className="nav-style">
       <Links/>
-      
 
     </div>
+    
   );
 };
 

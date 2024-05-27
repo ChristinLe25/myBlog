@@ -4,9 +4,9 @@
 // import { useNavigate } from "react-router-dom";
 
 import { useContext, useState } from "react";
-import { Auth } from "../../../config/auth/createUser";
 
-import { SignIn } from "../../../config/auth/singin";
+
+import  SignIn  from "../../../config/auth/singin";
 
 const Loggin = () => {
 
@@ -37,7 +37,6 @@ const Loggin = () => {
 
 
 
-
   return (
       //       <p>logga in gärmed email</p>
 
@@ -48,9 +47,16 @@ const Loggin = () => {
 //       <button onClick={handelLoggin} className="log-in-btn">
 //         logga in
 //       </button>
-      <div>
-        <Auth/>
-      </div>
+
+     <div>
+
+        
+    
+        <SignIn/>
+        <button>skappa konto</button>
+     </div>
+      
+      
 );
  };
 

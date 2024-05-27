@@ -73,6 +73,7 @@ const Home = () => {
     setSkrivenText,
   } = useContext(PostContext);
 
+
   const deletBloggPost = (index) => {
     const updatePost = showVal.filter((_, i) => i !== index);
     setShowVal(updatePost);
@@ -80,6 +81,9 @@ const Home = () => {
 
   return (
     <div>
+    
+    
+
       <p>du är inloggad {userName}</p>
       <ul>
         {showVal.map((blogPost, index) => (

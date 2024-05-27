@@ -1,37 +1,46 @@
-import { auth } from "../firebase";
-import { createUserWithEmailAndPassword, signOut } from "firebase/auth";
-import { useState } from "react";
 
-export const Auth = () => {
+
+import { auth } from "../firebase";
+import { useState } from "react";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+
+const SingUp = () => {
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isSigningIn, setIsSigningIn] = useState(false)
-   
-  const createUserWithMail = async (e) => {
-    e.preventDefault()
-      
-      if(!isSigningIn) {
-          setIsSigningIn(true)
 
-    await createUserWithEmailAndPassword(auth, email, password);
-    
-  }};
-
+  const singUp = (e) => {
+    e.preventDefault();
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        console.log(userCredential);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <div>
-      <form onSubmit={createUserWithMail} >
-
-      <input placeholder="Email.." onChange={(e) => setEmail(e.target.value)} />
-      <input
-        type="password"
-        placeholder="Password.."
-        onChange={(e) => setPassword(e.target.value)}
-        />
-      <button disabled={isSigningIn} type="sumit" >  {isSigningIn ? 'Signing In...' : 'Sign In'}</button>
+      <div>
+        <form onSubmit={singUp}>
+          <h1>Sing up</h1>
+          <input
+            type="email"
+            placeholder="Email.."
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            type="password"
+            placeholder="Password.."
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button type="sumit"> Sign up</button>
         </form>
-
-    
+      </div>
     </div>
   );
 };
+export default SingUp
