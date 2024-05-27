@@ -18,7 +18,7 @@ export const PostContext = createContext();
 
 
 const App = () => {
-  const [userName, setUserName] = useState("christin");
+  const [userName, setUserName] = useState(true);
 
   const [post, setPost] = useState([]);
   const [Koment, setKoment] = useState([]);
@@ -35,6 +35,7 @@ const App = () => {
         <BrowserRouter>
           <Header />
           <>
+
 
 
             <PostContext.Provider
@@ -58,12 +59,15 @@ const App = () => {
               </Routes>
             </PostContext.Provider>
           
+
+
             <Routes>
               <Route path="/login" element={<SignIn />} />
               <Route path="/register" element={<SingUp/>} />
             </Routes>
             
           
+
           </>
          
         </BrowserRouter>

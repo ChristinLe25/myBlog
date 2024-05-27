@@ -8,6 +8,7 @@ import SignIn  from "../../config/auth/singin";
 import SignUp  from "../../config/auth/createUser";
 import Home from "./home";
 import { useNavigate } from "react-router-dom";
+import AuthDetails from "../../config/auth/AuthDetails";
 
 const SuperHome = () => {
   //   const {userName} = useContext(UserContext)
@@ -36,8 +37,8 @@ const SuperHome = () => {
 
   return (
     <div>
-      <SignIn />
-      <SignUp />
+      
+      <AuthDetails/>
     </div>
   );
 };

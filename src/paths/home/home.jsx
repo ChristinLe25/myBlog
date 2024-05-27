@@ -74,6 +74,7 @@ const Home = () => {
   } = useContext(PostContext);
 
 
+
   const deletBloggPost = (index) => {
     const updatePost = showVal.filter((_, i) => i !== index);
     setShowVal(updatePost);
