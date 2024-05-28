@@ -41,8 +41,8 @@ const pusht = () => {
     <div>
       {authUser ? (
         <>
-        <Header/>
-          <p>sing in as {authUser.email}</p>
+        
+         
           <button onClick={userSignOut}>sing out</button>
           <Home />
         </>

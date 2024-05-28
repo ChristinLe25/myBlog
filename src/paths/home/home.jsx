@@ -59,6 +59,8 @@ import { PostContext, UserContext} from "../../App";
 import Write from "./components/write";
 import Coments from "./components/coment";
 import Loggin from "./components/loggin";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../config/firebase";
 
 const Home = () => {
   
@@ -73,12 +75,14 @@ const Home = () => {
     setSkrivenText,
   } = useContext(PostContext);
 
-
+  const [user] = useAuthState(auth)
 
   const deletBloggPost = (index) => {
-    const updatePost = showVal.filter((_, i) => i !== index);
-    setShowVal(updatePost);
+  
+      const updatePost = showVal.filter((_, i) => i !== index);
+      setShowVal(updatePost);
   };
+  
 
   return (
     <div>
@@ -89,18 +93,17 @@ const Home = () => {
       <ul>
         {showVal.map((blogPost, index) => (
           <li className="blog-post-style" key={index}>
-           
+           <p>{blogPost.user}</p>
             <div>{blogPost.rubrik}</div>
             <div>{blogPost.text}</div>
             <Coments />
-            <button onClick={() => deletBloggPost(index)}>delet</button>
+            {user.email == blogPost.user 
+            ? <button onClick={() => deletBloggPost(index)}>delet</button>
+             : <></> }  
           </li>
+          
         ))}
       </ul>
-
-      <BlogPost />
-      <BlogPost />
-      <BlogPost />
     </div>
   );
 };

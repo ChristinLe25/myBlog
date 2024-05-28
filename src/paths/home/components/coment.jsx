@@ -8,6 +8,8 @@ const Coments = () => {
 
   const [inputKomentarVal, setInputKomentarVal] = useState("");
 
+  
+
   const handelKomentar = () => {
     if (inputKomentarVal.trim() !== "") {
       const newBlogKomentar = { anvendare: userName, coment: inputKomentarVal };

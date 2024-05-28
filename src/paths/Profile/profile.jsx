@@ -1,14 +1,15 @@
+import Header from "../../Header/Header";
 
 
 
 const Profile = () => { 
     
     return (
-        <header>
-    
+      <div>
+
         <h1>profil sidan</h1>
-      
-    </header>
+   
+      </div>
   );
 };
 
