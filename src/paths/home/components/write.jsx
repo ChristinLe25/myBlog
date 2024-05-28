@@ -20,7 +20,7 @@ const Write = () => {
   
   const handelAdd = () => {
     if (skrivRubrik && skrivenText.trim() !== "") {
-      const newBlogPost = { user: user.email,  title: skrivRubrik, text: skrivenText };
+      const newBlogPost = { user: user.email,  title: skrivRubrik, text: skrivenText, comments:[] };
       setShowVal((p) => [...p, newBlogPost]);
       setSkrivRubrik("")
       setSkrivenText("")

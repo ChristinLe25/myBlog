@@ -78,11 +78,12 @@ const Home = () => {
   const [user] = useAuthState(auth)
 
   const deletBloggPost = (index) => {
-  
+
       const updatePost = showVal.filter((_, i) => i !== index);
       setShowVal(updatePost);
+
   };
-  
+
 
   return (
     <div>
@@ -94,12 +95,13 @@ const Home = () => {
         {showVal.map((blogPost, index) => (
           <li className="blog-post-style" key={index}>
            <p>{blogPost.user}</p>
-            <div>{blogPost.rubrik}</div>
+            <div>{blogPost.title}</div>
             <div>{blogPost.text}</div>
-            <Coments />
+            <Coments index={index} />
             {user.email == blogPost.user 
             ? <button onClick={() => deletBloggPost(index)}>delet</button>
              : <></> }  
+
           </li>
           
         ))}

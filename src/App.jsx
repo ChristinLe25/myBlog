@@ -19,7 +19,9 @@ const App = () => {
   const [post, setPost] = useState([]);
   const [Koment, setKoment] = useState([]);
 
-  const [showVal, setShowVal] = useState([{user: "jane doe", title: "En go dag", text: "idag var en go och bra dag"}]);
+  const [showVal, setShowVal] = useState([
+    {user: "jane doe", title: "En go dag", text: "idag var en go och bra dag", comments: [{user: "jane doe", comment: "Trying the comments"}] }
+  ]);
 
   const [skrivRubrik, setSkrivRubrik] = useState("");
   const [skrivenText, setSkrivenText] = useState("");

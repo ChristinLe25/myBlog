@@ -1,21 +1,27 @@
 import { useContext, useState } from "react";
-import { UserContext } from "../../../App";
+import { PostContext, UserContext } from "../../../App";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../../config/firebase";
 
 
-const Coments = () => {
-  const {userName} = useContext(UserContext)
+const Coments = ({index}) => {
   const [Koment, setKoment] = useState([]);
+
+const [user] = useAuthState(auth)
 
   const [inputKomentarVal, setInputKomentarVal] = useState("");
 
-  
+  const {setShowVal, showVal} = useContext(PostContext);
 
   const handelKomentar = () => {
-    if (inputKomentarVal.trim() !== "") {
-      const newBlogKomentar = { anvendare: userName, coment: inputKomentarVal };
-      setKoment((c) => [...c, newBlogKomentar]);
-      setInputKomentarVal("");
-    }
+    console.log(index)
+      const newBlogKomentar = { user: user?.email, comment: inputKomentarVal };
+      let list = showVal;
+      let blogPost = showVal[index];
+      blogPost.comments.push(newBlogKomentar);
+      list[index] = blogPost;
+      setShowVal(list);
+      setInputKomentarVal("");  
   };
 
   return (
@@ -26,12 +32,18 @@ const Coments = () => {
         value={inputKomentarVal}
       />
       <button onClick={handelKomentar}>kommentera</button>
-      {Koment.map((coment, index) => (
-        <div className="coment" key={index}>
-          <div className="coment-user">{coment.anvendare}</div>
-          <div className="text-conent">{coment.coment}</div>
-        </div>
-      ))}
+      <ul className="showComments">
+            {showVal[index].comments?.map((comment, id) => (
+              <li key={id}>
+                <div>
+                  {comment.user}
+                </div>
+                <div>
+                {comment.comment}
+                </div>
+                </li>
+            ))}
+            </ul>
     </>
   );
 };
