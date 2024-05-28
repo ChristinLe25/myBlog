@@ -61,7 +61,7 @@ import Coments from "./components/coment";
 import Loggin from "./components/loggin";
 
 const Home = () => {
-  const {userName} = useContext(UserContext)
+  
   const {
     showVal,
     setShowVal,
@@ -85,7 +85,7 @@ const Home = () => {
     
     
 
-      <p>du är inloggad {userName}</p>
+      
       <ul>
         {showVal.map((blogPost, index) => (
           <li className="blog-post-style" key={index}>

@@ -9,7 +9,7 @@ const Header = () => {
       <h3>Christin´s Blogg</h3>
       {/* {authUser ? <><Nav/></> : <></>} */}
         
-        
+      <Nav/>
     </div>
     
   );

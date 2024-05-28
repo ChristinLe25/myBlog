@@ -9,6 +9,7 @@ import SignUp  from "../../config/auth/createUser";
 import Home from "./home";
 import { useNavigate } from "react-router-dom";
 import AuthDetails from "../../config/auth/AuthDetails";
+import Nav from "../../Header/components/nav";
 
 const SuperHome = () => {
   //   const {userName} = useContext(UserContext)
@@ -27,17 +28,11 @@ const SuperHome = () => {
     JSON.parse(localStorage.getItem("loginStatus"))
   );
 
-  const [sumitBtn, setSumitBtn] = useState(true);
-
-  const navigate = useNavigate();
-
-  const isSumit = () => {
-    setSumitBtn(!sumitBtn);
-  };
+ 
 
   return (
     <div>
-      
+     
       <AuthDetails/>
     </div>
   );

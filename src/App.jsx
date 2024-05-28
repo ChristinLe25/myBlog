@@ -18,7 +18,7 @@ export const PostContext = createContext();
 
 
 const App = () => {
-  const [userName, setUserName] = useState(true);
+  
 
   const [post, setPost] = useState([]);
   const [Koment, setKoment] = useState([]);
@@ -30,10 +30,10 @@ const App = () => {
 
 
   return (
-    <UserContext.Provider value={{ userName, setUserName }}>
+    <UserContext.Provider value={{ }}>
       <div className="App">
         <BrowserRouter>
-          <Header />
+          
           <>
 
 

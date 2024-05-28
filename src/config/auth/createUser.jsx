@@ -3,11 +3,13 @@
 import { auth } from "../firebase";
 import { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { Link, useNavigate } from "react-router-dom";
 
 const SingUp = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  
 
   const singUp = (e) => {
     e.preventDefault();
@@ -20,9 +22,11 @@ const SingUp = () => {
       });
   };
 
+ 
+
   return (
     <div>
-      <div>
+      
         <form onSubmit={singUp}>
           <h1>Sing up</h1>
           <input
@@ -39,7 +43,7 @@ const SingUp = () => {
           />
           <button type="sumit"> Sign up</button>
         </form>
-      </div>
+       
     </div>
   );
 };

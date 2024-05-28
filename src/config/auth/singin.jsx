@@ -1,12 +1,16 @@
 import { auth } from "../firebase";
 import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import SignUp from "./createUser";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignIn = () => {
-
+  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  
+ 
+  
   const singIn = (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
@@ -37,6 +41,7 @@ const SignIn = () => {
           />
           <button type="sumit"> Sign In</button>
         </form>
+        
       </div>
     </div>
   );
