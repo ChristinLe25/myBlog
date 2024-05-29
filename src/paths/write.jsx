@@ -1,14 +1,11 @@
-import { useContext, useState } from "react";
-import BlogPost from "./blogPost";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { PostContext} from "../../../App";
-import Header from "../../../Header/Header";
+import { PostContext } from "../App";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "../../../config/firebase";
+import { auth } from "../config/firebase";
 
 const Write = () => {
   const {
-    showVal,
     setShowVal,
     skrivRubrik,
     setSkrivRubrik,
@@ -17,26 +14,31 @@ const Write = () => {
   } = useContext(PostContext);
 
   const [user] = useAuthState(auth);
-  
+
   const handelAdd = () => {
     if (skrivRubrik && skrivenText.trim() !== "") {
-      const newBlogPost = { user: user.email,  title: skrivRubrik, text: skrivenText, comments:[] };
+      const newBlogPost = {
+        user: user.email,
+        title: skrivRubrik,
+        text: skrivenText,
+        comments: [],
+      };
       setShowVal((p) => [...p, newBlogPost]);
-      setSkrivRubrik("")
-      setSkrivenText("")
+      setSkrivRubrik("");
+      setSkrivenText("");
     }
   };
 
-  if(user == null || user == undefined){
-    return(
+  //stop för ike inlogde ska ta sig in
+  if (user == null || user == undefined) {
+    return (
       <>
-      <p>Can't acces page</p>
+        <p>Can't acces page</p>
       </>
-    )
+    );
   }
   return (
     <div>
-      
       <p>skriv dit inlägg</p>
       <input
         onChange={(e) => setSkrivRubrik(e.target.value)}

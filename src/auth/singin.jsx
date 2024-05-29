@@ -1,19 +1,14 @@
-
-
-import { auth } from "../firebase";
+import { auth } from "../config/firebase";
 import { useState } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { Link, useNavigate } from "react-router-dom";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
-const SingUp = () => {
-
+const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  
 
-  const singUp = (e) => {
+  const singIn = (e) => {
     e.preventDefault();
-    createUserWithEmailAndPassword(auth, email, password)
+    signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log(userCredential);
       })
@@ -22,13 +17,11 @@ const SingUp = () => {
       });
   };
 
- 
-
   return (
     <div>
-      
-        <form onSubmit={singUp}>
-          <h1>Sing up</h1>
+      <div>
+        <form onSubmit={singIn}>
+          <h1>Sing in</h1>
           <input
             type="email"
             placeholder="Email.."
@@ -41,10 +34,11 @@ const SingUp = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button type="sumit"> Sign up</button>
+
+          <button type="sumit"> Sign In</button>
         </form>
-       
+      </div>
     </div>
   );
 };
-export default SingUp
+export default SignIn;

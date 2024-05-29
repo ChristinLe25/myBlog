@@ -1,26 +1,24 @@
 import { createContext, useState } from "react";
 import Header from "./Header/Header";
-
-import Write from "./paths/home/components/write";
-import Profile from "./paths/Profile/profile";
+import Write from "./paths/write";
+import Profile from "./paths/profile";
 import "./App.css";
-import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
-
-import SingUp from "./config/auth/createUser";
-
-import SignIn from "./config/auth/singin";
-import PageLayout from "./pathsLayout";
-import SuperHome from "./paths/home/superHome";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SingUp from "./auth/createUser";
+import SignIn from "./auth/singin";
+import SuperHome from "./paths/home/homePage";
 
 export const UserContext = createContext();
 export const PostContext = createContext();
 
 const App = () => {
-  const [post, setPost] = useState([]);
-  const [Koment, setKoment] = useState([]);
-
   const [showVal, setShowVal] = useState([
-    {user: "jane doe", title: "En go dag", text: "idag var en go och bra dag", comments: [{user: "jane doe", comment: "Trying the comments"}] }
+    {
+      user: "jane doe",
+      title: "En go dag",
+      text: "idag var en go och bra dag",
+      comments: [{ user: "jane doe", comment: "Trying the comments" }],
+    },
   ]);
 
   const [skrivRubrik, setSkrivRubrik] = useState("");
@@ -31,15 +29,11 @@ const App = () => {
       <div className="App">
         <BrowserRouter>
           <>
-          <Header/>
+            <Header />
             <PostContext.Provider
               value={{
                 showVal,
                 setShowVal,
-                post,
-                setPost,
-                Koment,
-                setKoment,
                 skrivRubrik,
                 setSkrivRubrik,
                 skrivenText,
@@ -57,7 +51,6 @@ const App = () => {
           </>
         </BrowserRouter>
       </div>
-      {/* <button onClick={handelLogout}>logga uthihi</button> */}
     </UserContext.Provider>
   );
 };

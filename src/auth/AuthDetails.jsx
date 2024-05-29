@@ -1,13 +1,9 @@
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useEffect, useState } from "react";
-import { auth } from "../firebase";
-import Home from "../../paths/home/home";
+import { auth } from "../config/firebase";
+import Home from "../paths/home/components/home";
 import SignIn from "./singin";
 import SignUp from "./createUser";
-import Header from "../../Header/Header";
-import Nav from "../../Header/components/nav";
-import { Link, useNavigate } from "react-router-dom";
-import SingUp from "./createUser";
 
 const AuthDetails = () => {
   const [authUser, setAuthUser] = useState(null);
@@ -40,18 +36,14 @@ const pusht = () => {
   return (
     <div>
       {authUser ? (
-        <>
-        
-         
+        <>     
           <button onClick={userSignOut}>sing out</button>
           <Home />
         </>
       ) : (
         <>
           <p>sing in</p> <SignIn /> <button onClick={pusht}> skappa inlogg</button>
-          {btn ? <SignUp/>  : "" }
-           
-         
+          {btn ? <SignUp/>  : "" }   
         </>
       )}
     </div>

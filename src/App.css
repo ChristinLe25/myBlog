@@ -1,30 +1,22 @@
-.log-ut-btn {
-  background-color: rgb(135, 141, 141);
-  margin-top: 200px;
-}
-
 .blog-post-style {
-  background-color: rgb(63, 99, 99);
-  
+  background-color: rgb(66, 99, 63);
   padding: 40px;
   margin: 20px 120px;
 }
+
 .link {
-    color: rgb(0, 0, 0);
-    margin: 40px;
+  color: rgb(0, 0, 0);
+  margin: 40px;
 }
-.nav-style {
-    display: flex;
-    
-    
-    align-items: center;
-}
+
 .header {
-    color: rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
   width: 100vw;
-  background-color: rgb(84, 146, 146);
+  height: 10vh;
+  background-color: rgb(80, 161, 56);
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .blog-text {
   color: black;
@@ -34,20 +26,22 @@
   font-size: x-large;
   font-weight: 800;
 }
-p{
-    color: black;
+p {
+  color: black;
 }
-.coment{
-    display: flex;
-    box-shadow: 4px;
-    border-style: solid;
-    border-radius: 10px;
-    
+.coment {
+  display: flex;
+  box-shadow: 4px;
+  border-style: solid;
+  border-radius: 10px;
 }
-.coment-user{
-    padding: 10px;
+.coment-user {
+  padding: 10px;
 }
-.text-conent{
-    padding: 10px;
-
+.text-conent {
+  padding: 10px;
+}
+input[type="text"] {
+  accent-color: green;
+  background-color: rgb(0, 0, 0);
 }

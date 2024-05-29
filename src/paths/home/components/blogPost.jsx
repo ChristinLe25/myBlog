@@ -1,6 +1,4 @@
-import { useContext, useState } from "react";
-import Write from "./write";
-import { PostContext} from "../../../App";
+import { useState } from "react";
 import Coments from "./coment";
 
 const BlogPost = () => {
