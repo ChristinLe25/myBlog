@@ -38,13 +38,15 @@ const Write = () => {
     );
   }
   return (
-    <div>
-      <p>skriv dit inlägg</p>
+    <div className="margin">
+      <h2>Dit inlägg</h2>
+      <p>Rubrik:</p>
       <input
         onChange={(e) => setSkrivRubrik(e.target.value)}
         value={skrivRubrik}
       />
-      <input
+      <p>Skrv din text:</p>
+      <textarea  className="text-input"
         onChange={(e) => setSkrivenText(e.target.value)}
         value={skrivenText}
       />

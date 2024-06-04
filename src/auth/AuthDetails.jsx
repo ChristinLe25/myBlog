@@ -34,7 +34,7 @@ const pusht = () => {
 }
 
   return (
-    <div>
+    <div className="margin">
       {authUser ? (
         <>     
           <button onClick={userSignOut}>sing out</button>
@@ -42,7 +42,7 @@ const pusht = () => {
         </>
       ) : (
         <>
-          <p>sing in</p> <SignIn /> <button onClick={pusht}> skappa inlogg</button>
+          <p>Logga in på christins blogg</p> <SignIn /> <button onClick={pusht}> skappa inlogg</button>
           {btn ? <SignUp/>  : "" }   
         </>
       )}

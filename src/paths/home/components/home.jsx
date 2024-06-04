@@ -15,11 +15,11 @@ const Home = () => {
   };
   return (
     <div>
-      <ul>
+      <ul >
         {showVal.map((blogPost, index) => (
           <li className="blog-post-style" key={index}>
-            <p>{blogPost.user}</p>
-            <div>{blogPost.title}</div>
+            <h5>{blogPost.user}</h5>
+            <div className="blog-title">{blogPost.title}</div>
             <div>{blogPost.text}</div>
             <Coments index={index} />
             {user.email == blogPost.user ? (

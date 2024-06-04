@@ -7,7 +7,7 @@ const Nav = () => {
 
   return (
     <>
-      <p>{user?.email}</p>
+      <p> {user?.email}</p>
       {user?.email ? (
         <>
           <Link className="link" to="/">

@@ -28,11 +28,11 @@ const Coments = ({ index }) => {
         value={inputKomentarVal}
       />
       <button onClick={handelKomentar}>kommentera</button>
-      <ul className="showComments">
+      <ul className="ul-placment " >
         {showVal[index].comments?.map((comment, id) => (
-          <li key={id}>
-            <div>{comment.user}</div>
-            <div>{comment.comment}</div>
+          <li className="showComments" key={id}>
+            <div className="coment-user">{comment.user}</div>
+            <div className="coment-text">{comment.comment}</div>
           </li>
         ))}
       </ul>
