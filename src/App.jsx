@@ -25,8 +25,8 @@ const App = () => {
 
   return (
       <div className="App">
-            <Header />
         <BrowserRouter>
+            <Header />
           <>
             <PostContext.Provider
               value={{
