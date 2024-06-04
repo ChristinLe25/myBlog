@@ -8,7 +8,6 @@ import SingUp from "./auth/createUser";
 import SignIn from "./auth/singin";
 import SuperHome from "./paths/home/homePage";
 
-export const UserContext = createContext();
 export const PostContext = createContext();
 
 const App = () => {
@@ -25,11 +24,10 @@ const App = () => {
   const [skrivenText, setSkrivenText] = useState("");
 
   return (
-    <UserContext.Provider value={{}}>
       <div className="App">
+            <Header />
         <BrowserRouter>
           <>
-            <Header />
             <PostContext.Provider
               value={{
                 showVal,
@@ -51,7 +49,7 @@ const App = () => {
           </>
         </BrowserRouter>
       </div>
-    </UserContext.Provider>
+    
   );
 };
 
