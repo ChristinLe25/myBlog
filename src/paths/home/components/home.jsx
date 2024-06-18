@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { PostContext } from "../../../App";
 import Coments from "./coment";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -10,6 +10,8 @@ const Home = () => {
 
   const [user] = useAuthState(auth);
 
+  const [editing, setEdititng] = useState(false);
+
   const deletBloggPost = (index) => {
     const updatePost = showVal.filter((_, i) => i !== index);
     setShowVal(updatePost);
@@ -19,9 +21,9 @@ const Home = () => {
       <ul>
         {showVal.map((blogPost, index) => (
           <li className="blog-post-style" key={index}>
-            {user.email === blogPost.user ? (
+            {user.email === blogPost.user && editing ? (
               <div>
-                <EditPost index={index} blogPost={blogPost}/>
+                <EditPost index={index} blogPost={blogPost} />
               </div>
             ) : (
               <>
@@ -32,7 +34,10 @@ const Home = () => {
             )}
             <Coments index={index} />
             {user.email === blogPost.user ? (
-              <button onClick={() => deletBloggPost(index)}>delet</button>
+              <div>
+                <button onClick={() => deletBloggPost(index)}>Delete</button>
+                <button onClick={() => setEdititng(!editing)}>Edit</button>
+              </div>
             ) : (
               <></>
             )}
