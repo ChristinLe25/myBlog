@@ -36,7 +36,7 @@ const Home = () => {
             {user.email === blogPost.user ? (
               <div>
                 <button onClick={() => deletBloggPost(index)}>Delete</button>
-                <button onClick={() => setEdititng(!editing)}>Edit</button>
+                <button onClick={() => setEdititng(!editing)}>{editing ? "Leave editing" :"Edit"}</button>
               </div>
             ) : (
               <></>
