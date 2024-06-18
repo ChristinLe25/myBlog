@@ -55,3 +55,7 @@
 .text-input{
   height: 70px;
 }
+.edit-placing{
+  display: flex;
+  flex-direction: column;
+}

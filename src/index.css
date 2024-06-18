@@ -38,6 +38,7 @@ li {
 
 input{
   height: 16px;
+  width: fit-content;
   font-size: 1em;
   padding: 10px;
   margin-right: 14px;

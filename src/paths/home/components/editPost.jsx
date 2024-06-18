@@ -21,16 +21,18 @@ const EditPost = ({ blogPost, index }) => {
   return (
     <>
       <h5>{blogPost.user}</h5>
+      <div className="edit-placing">
       <input
         type="text"
         defaultValue={blogPost.title}
         onChange={(e) => setTitle(e.target.value)}
         className="blog-title"
-      />
+        />
       <textarea
         defaultValue={blogPost.text}
         onChange={(e) => setText(e.target.value)}
-      />
+        />
+        </div>
       <button onClick={setEdits}>save edit</button>
     </>
   );
